@@ -18,5 +18,7 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:15" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:15" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:15" level="project" />
+    <orderEntry type="library" name="java" level="project" />
+    <orderEntry type="library" name="Java FX" level="project" />
   </component>
 </module>
