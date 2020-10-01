@@ -2,8 +2,12 @@ package org.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -46,6 +50,25 @@ public class PrimaryController {
 
         // Launch new scene
         App.setRoot("secondary");
+    }
+
+    @FXML
+    private void addOrderWindow() throws IOException {
+        System.out.println("New order button pressed");
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Add Order Window.fxml"));
+        Parent root = loader.load();
+
+        AddOrderController controller = loader.getController();
+        controller.setParentController(this);
+
+        Scene scene = new Scene(root);
+        Stage popUp = new Stage();
+        popUp.setScene(scene);
+        popUp.setTitle("New Task...");
+        popUp.show();
+
     }
 
     // Test method
