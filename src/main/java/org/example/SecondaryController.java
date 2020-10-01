@@ -1,14 +1,16 @@
 package org.example;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class SecondaryController {
 
     @FXML private Label testLabel;
+    @FXML private TextField orderNumTextField;
 
     @FXML
     private void initialize() {
@@ -18,6 +20,18 @@ public class SecondaryController {
         String name = ent.getName();
         testLabel.setText(name);
 
+    }
+
+    @FXML
+    private void saveOrder() throws IOException {
+
+        // Singleton testing
+        Entry ent = new Entry();
+        ent.setOrderNum(orderNumTextField.getText());
+        SingletonData holder = SingletonData.getInstance();
+        holder.setEntry(ent);
+
+        App.setRoot("primary");
     }
 
     @FXML

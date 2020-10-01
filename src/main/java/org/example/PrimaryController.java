@@ -1,22 +1,32 @@
 package org.example;
 
-import java.io.IOException;
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-
-
+import java.io.IOException;
 
 
 public class PrimaryController {
 
+
+
     @FXML private TextField testTextField;
+    @FXML private Label orderNumLabel;
 
     @FXML
     private void initialize() {
+
+        try {
+            SingletonData holder = SingletonData.getInstance();
+            Entry ent = holder.getEntry();
+            String orderNum = ent.getOrderNum();
+            orderNumLabel.setText(orderNum);
+        }
+        catch(NullPointerException e){
+            System.out.println("Order Number is Null");
+        }
 
     }
 
@@ -29,12 +39,9 @@ public class PrimaryController {
 
         // Singleton testing
         Entry ent = new Entry();
-
         ent.setName(testTextField.getText());
-
         SingletonData holder = SingletonData.getInstance();
         holder.setEntry(ent);
-        //SecondaryController.receiveData(event);
 
 
         // Launch new scene
@@ -47,10 +54,12 @@ public class PrimaryController {
         System.out.println("Hello world");
     }
 
+
+
     @FXML
     private void printNameFromEntry() {
 
-        try {
+        /**try {
             SingletonData holder = SingletonData.getInstance();
             Entry ent = holder.getEntry();
             String name = ent.getName();
@@ -58,13 +67,10 @@ public class PrimaryController {
         }
         catch (NullPointerException e){
             System.out.println("Invoice number is null");
-        }
+        }**/
 
     }
 
-    private void gitHubFunction(){
-
-    }
 
 
 }
