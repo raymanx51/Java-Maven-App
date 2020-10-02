@@ -18,11 +18,14 @@ public class PrimaryController {
 
     @FXML private TextField testTextField;
     @FXML private Label orderNumLabel;
+    @FXML private Label lastNameLabel;
+    @FXML private Label firstNameLabel;
+    @FXML private Label invoiceLabel;
 
     @FXML
     private void initialize() {
 
-        try {
+        /**try {
             SingletonData holder = SingletonData.getInstance();
             Entry ent = holder.getEntry();
             String orderNum = ent.getOrderNum();
@@ -30,7 +33,8 @@ public class PrimaryController {
         }
         catch(NullPointerException e){
             System.out.println("Order Number is Null");
-        }
+        }**/
+
 
     }
 
@@ -66,7 +70,7 @@ public class PrimaryController {
         Scene scene = new Scene(root);
         Stage popUp = new Stage();
         popUp.setScene(scene);
-        popUp.setTitle("New Task...");
+        popUp.setTitle("New Order");
         popUp.show();
 
     }
@@ -92,6 +96,26 @@ public class PrimaryController {
             System.out.println("Invoice number is null");
         }**/
 
+    }
+
+    public void parseNewOrder() {
+
+        try {
+            SingletonData holder = SingletonData.getInstance();
+            Entry ent = holder.getEntry();
+            String invoiceNum = ent.getOrderNum();
+            invoiceLabel.setText(invoiceNum);
+
+            String lastName = ent.getLastName();
+            lastNameLabel.setText(lastName);
+
+            String firstName = ent.getFirstName();
+            firstNameLabel.setText(firstName);
+
+        }
+        catch(NullPointerException e){
+            System.out.println("New order is null");
+        }
     }
 
 
