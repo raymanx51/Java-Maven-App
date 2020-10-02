@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -30,10 +31,36 @@
       <TilePane prefHeight="45.0" prefWidth="960.0" style="-fx-background-color: #42aaf5;" BorderPane.alignment="CENTER" />
    </top>
    <center>
-      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Order Number:" />
-            <Label fx:id="orderNumLabel" text="Label" />
+            <Label text="Newest Order:" />
+            <HBox fillHeight="false" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+               <children>
+                  <Label fx:id="orderNumLabel" text="Last Name:          " />
+                  <Label fx:id="lastNameLabel" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox fillHeight="false" layoutX="295.0" layoutY="357.0" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+               <children>
+                  <Label fx:id="orderNumLabel1" text="First Name:          " />
+                  <Label fx:id="firstNameLabel" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox fillHeight="false" layoutX="295.0" layoutY="374.0" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+               <children>
+                  <Label fx:id="orderNumLabel11" text="Invoice Number:  " />
+                  <Label fx:id="invoiceLabel" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
