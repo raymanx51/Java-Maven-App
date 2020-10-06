@@ -16,9 +16,9 @@ public class AddOrderController {
     @FXML private TextField invoiceNumTextField;
 
     // Establishes a reference to the controller that created this window
-    public PrimaryController parentController;
+    public DashboardController parentController;
 
-    public void setParentController(PrimaryController controller) {
+    public void setParentController(DashboardController controller) {
         parentController = controller;
     }
 

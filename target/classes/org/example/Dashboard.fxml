@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="780.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DashboardController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="726.0" prefWidth="201.0" spacing="20.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="39.0" layoutY="30.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" text="Home" />
+            <Button fx:id="primaryButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="68.0" prefWidth="155.0" text="Orders">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <TilePane prefHeight="54.0" prefWidth="1200.0" style="-fx-background-color: #42aaf5;" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <AnchorPane>
+         <children>
+            <ScrollPane hbarPolicy="ALWAYS" layoutX="30.0" layoutY="125.0" prefHeight="175.0" prefWidth="797.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="426.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="125.0">
+               <content>
+                  <VBox alignment="CENTER" spacing="8.0">
+                     <children>
+                        <Label text="Newest Order:" />
+                        <HBox fillHeight="false" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="orderNumLabel" text="Last Name:          " />
+                              <Label fx:id="lastNameLabel" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fillHeight="false" layoutX="295.0" layoutY="357.0" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="orderNumLabel1" text="First Name:          " />
+                              <Label fx:id="firstNameLabel" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fillHeight="false" layoutX="295.0" layoutY="374.0" maxWidth="-Infinity" prefHeight="21.0" prefWidth="230.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="orderNumLabel11" text="Invoice Number:  " />
+                              <Label fx:id="invoiceLabel" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="726.0" prefWidth="234.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutY="121.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="350.0" prefWidth="253.0" spacing="10.0" style="-fx-background-color: #69baf0;">
+               <children>
+                  <Button fx:id="addOrderButton" mnemonicParsing="false" onAction="#addOrderWindow" prefHeight="66.0" prefWidth="221.0" text="Create New Order" />
+                  <Button fx:id="addOrderButton1" layoutX="26.0" layoutY="20.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="221.0" text="Create New Customer" />
+                  <Button fx:id="addOrderButton11" layoutX="26.0" layoutY="96.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="221.0" text="placeholder" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
