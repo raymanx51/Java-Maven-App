@@ -1,7 +1,7 @@
 org\example\AddOrderController.class
 module-info.class
-org\example\SecondaryController.class
+org\example\DashboardController.class
 org\example\App.class
-org\example\PrimaryController.class
+org\example\OrdersController.class
 org\example\SingletonData.class
 org\example\Entry.class
