@@ -18,7 +18,7 @@
          <children>
             <VBox alignment="CENTER" fillWidth="false" prefHeight="304.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <Label text="Add new order:">
+                  <Label text="Create New Order:">
                      <padding>
                         <Insets bottom="10.0" />
                      </padding></Label>
