@@ -8,6 +8,7 @@ public final class SingletonData {
     private SingletonData() {}
 
     public static SingletonData getInstance() {
+
         return INSTANCE;
     }
 

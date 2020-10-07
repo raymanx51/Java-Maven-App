@@ -42,6 +42,11 @@ public class DashboardController {
     }
 
     @FXML
+    private void switchToOrders(ActionEvent event) throws IOException {
+        App.setRoot("Orders");
+    }
+
+    @FXML
     private void switchToSecondary(ActionEvent event) throws IOException {
 
         // print testTextField to console for testing
@@ -53,8 +58,10 @@ public class DashboardController {
 
 
         // Launch new scene
-        App.setRoot("Orders");
+        App.setRoot("Test");
     }
+
+
 
     @FXML
     private void addOrderWindow() throws IOException {
@@ -71,6 +78,25 @@ public class DashboardController {
         Stage popUp = new Stage();
         popUp.setScene(scene);
         popUp.setTitle("New Order");
+        popUp.show();
+
+    }
+
+    @FXML
+    private void createCustomerWindow() throws IOException {
+        System.out.println("Create new customer button pressed");
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Add Customer Window.fxml"));
+        Parent root = loader.load();
+
+        AddCustomerController controller = loader.getController();
+        controller.setParentController(this);
+
+        Scene scene = new Scene(root);
+        Stage popUp = new Stage();
+        popUp.setScene(scene);
+        popUp.setTitle("New Customer");
         popUp.show();
 
     }
@@ -101,6 +127,7 @@ public class DashboardController {
     public void parseNewOrder() {
 
         try {
+
             SingletonData holder = SingletonData.getInstance();
             Entry ent = holder.getEntry();
             String invoiceNum = ent.getOrderNum();
