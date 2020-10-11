@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="layout" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddOrderController">
+<AnchorPane fx:id="layout" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddOrderController">
    <children>
       <StackPane layoutX="68.0" prefHeight="350.0" prefWidth="315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -22,48 +22,54 @@
                      <padding>
                         <Insets bottom="10.0" />
                      </padding></Label>
-                  <VBox prefHeight="42.0" prefWidth="295.0" spacing="9.0">
+                  <VBox fx:id="lastNameVbox" prefHeight="42.0" prefWidth="295.0" spacing="9.0">
                      <children>
-                        <Label text="Customer Last Name:">
+                        <Label text="Customer Last Name *">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
                         <TextField fx:id="lastNameTextField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="209.0" promptText="Last Name" />
+                        <Label fx:id="lastNameErrorMessage" text="Please enter a value for last name" textFill="RED" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </VBox>
-                  <VBox layoutX="30.0" layoutY="67.0" prefHeight="42.0" prefWidth="295.0" spacing="9.0">
+                  <VBox fx:id="firstNameVbox" layoutX="30.0" layoutY="67.0" prefHeight="42.0" prefWidth="295.0" spacing="9.0">
                      <children>
-                        <Label text="Customer First Name:">
+                        <Label text="Customer First Name *">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
                         <TextField fx:id="firstNameTextField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="209.0" promptText="First Name" />
+                        <Label fx:id="firstNameErrorMessage" text="Please enter a value for first name" textFill="RED" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </VBox>
-                  <Separator prefWidth="200.0" />
-                  <Label text="Or" />
-                  <ComboBox prefWidth="150.0" promptText="Select Customer">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </ComboBox>
-                  <Separator layoutX="140.0" layoutY="214.0" prefWidth="200.0" />
-                  <VBox layoutX="30.0" layoutY="135.0" prefHeight="42.0" prefWidth="295.0" spacing="9.0">
+                  <VBox alignment="CENTER" spacing="9.0">
                      <children>
-                        <Label text="Invoice Number:">
+                        <Separator prefWidth="200.0" />
+                        <Label text="Or" />
+                        <ComboBox prefWidth="150.0" promptText="Select Customer" />
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="invoiceNumVbox" layoutX="30.0" layoutY="135.0" prefHeight="42.0" prefWidth="295.0" spacing="9.0">
+                     <children>
+                        <Label text="Invoice Number *">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
                         <TextField fx:id="invoiceNumTextField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="209.0" promptText="Invoice" />
+                        <Label fx:id="invoiceNumErrorMessage" text="Please enter a value for invoice number" textFill="RED" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

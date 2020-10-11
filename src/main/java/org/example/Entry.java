@@ -43,4 +43,6 @@ public class Entry {
         return orderNum;
     }
 
+    public void setDateCreated(){}
+
 }

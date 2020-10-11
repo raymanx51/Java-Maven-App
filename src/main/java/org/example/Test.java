@@ -43,4 +43,7 @@ public class Test {
     @FXML
     public static void receiveData(ActionEvent event) {
     }
+
+
+
 }

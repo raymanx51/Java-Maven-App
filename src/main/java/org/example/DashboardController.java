@@ -25,8 +25,7 @@ public class DashboardController {
     @FXML
     private void initialize() {
 
-        /**
-         * old - testing initialize between scenes
+        /* old - testing initialize() between scenes
          *
          * try {
             SingletonData holder = SingletonData.getInstance();
@@ -36,18 +35,21 @@ public class DashboardController {
         }
         catch(NullPointerException e){
             System.out.println("Order Number is Null");
-        }**/
-
+        }
+        * */
 
     }
 
     @FXML
     private void switchToOrders(ActionEvent event) throws IOException {
+        System.out.println("Switched to 'Orders' page");
+
         App.setRoot("Orders");
     }
 
+
     @FXML
-    private void switchToSecondary(ActionEvent event) throws IOException {
+    private void switchToSecondary() throws IOException {
 
         // print testTextField to console for testing
 
@@ -55,7 +57,6 @@ public class DashboardController {
         Entry ent = new Entry();
         SingletonData holder = SingletonData.getInstance();
         holder.setEntry(ent);
-
 
         // Launch new scene
         App.setRoot("Test");
