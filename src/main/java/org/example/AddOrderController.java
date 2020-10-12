@@ -9,6 +9,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class AddOrderController {
 
@@ -45,9 +48,8 @@ public class AddOrderController {
         /*
             To-do here:
             - Load in list of customers from database into ComboBox
-            - Implement ComboBox selection to TextField validation (name fields can/must be blank if ComboBox is selected)
-            - Add current date (LocalDate?) to the order entry (add set/get date to Entry class)
-
+            - Implement ComboBox selection to TextField validation (name fields can/must be blank if ComboBox is selected) - Maybe disable name
+              TextFields if a name inside ComboBox is selected?
 
          */
 
@@ -62,19 +64,29 @@ public class AddOrderController {
             // Singleton testing
             Entry ent = new Entry();
 
+            // Create date object to reference current date/time
+            ZoneId z = ZoneId.of( "America/New_York" );
+            ZonedDateTime orderDateTime = ZonedDateTime.now(z);
+            System.out.println(orderDateTime);
+
+            //System.out.println("Order entered at " + (DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(orderDateTime)));
+
             ent.setLastName(lastNameTextField.getText());
             ent.setFirstName(firstNameTextField.getText());
             ent.setOrderNum(invoiceNumTextField.getText());
+            ent.setDateCreated(orderDateTime);
             SingletonData holder = SingletonData.getInstance();
             holder.setEntry(ent);
 
             // To-do here: After validating no fields are blank, add order to database (delete singleton cmd later)
+
             parentController.parseNewOrder();
 
             System.out.println("\nNew Order entered:");
-            System.out.println("Last Name: " + ent.getLastName());
-            System.out.println("First Name: " + ent.getFirstName());
-            System.out.println("Invoice #: " + ent.getOrderNum());
+            System.out.println("Last Name:    " + ent.getLastName());
+            System.out.println("First Name:   " + ent.getFirstName());
+            System.out.println("Invoice #:    " + ent.getOrderNum());
+            System.out.println("Date created: " + (DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(orderDateTime)));
 
             closeWindow();
         }
