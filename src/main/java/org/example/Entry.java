@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.ZonedDateTime;
+
 public class Entry {
 
     public String name;
@@ -7,6 +9,7 @@ public class Entry {
     public String firstName;
     public String lastName;
     public String orderNum;
+    public ZonedDateTime currentDate;
 
 
 
@@ -18,31 +21,44 @@ public class Entry {
         return name;
     }
 
+    // First name setter
     public void setFirstName(String fName){
         firstName = fName;
     }
 
+    // First name getter
     public String getFirstName() {
         return firstName;
     }
 
+    // Last name setter
     public void setLastName(String lName) {
         lastName = lName;
     }
 
+    // Last name getter
     public String getLastName() {
         return lastName;
     }
 
+    // Order num setter
     public void setOrderNum(String o){
         orderNum = o;
     }
 
+    // Order num getter
     public String getOrderNum(){
-
         return orderNum;
     }
 
-    public void setDateCreated(){}
+    // Date setter
+    public void setDateCreated(ZonedDateTime date) {
+        currentDate = date;
+    }
+
+    // Date getter
+    public ZonedDateTime getDateCreated() {
+        return currentDate;
+    }
 
 }

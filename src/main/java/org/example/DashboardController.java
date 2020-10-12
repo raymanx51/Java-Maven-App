@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class DashboardController {
@@ -21,6 +23,7 @@ public class DashboardController {
     @FXML private Label lastNameLabel;
     @FXML private Label firstNameLabel;
     @FXML private Label invoiceLabel;
+    @FXML private Label dateLabel;
 
     @FXML
     private void initialize() {
@@ -139,6 +142,9 @@ public class DashboardController {
 
             String firstName = ent.getFirstName();
             firstNameLabel.setText(firstName);
+
+            ZonedDateTime dateCreated = ent.getDateCreated();
+            dateLabel.setText((DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(dateCreated)));
 
         }
         catch(NullPointerException e){
